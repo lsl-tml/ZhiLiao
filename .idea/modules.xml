@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../新建文件夹/TaiG/.idea/TaiG.iml" filepath="$PROJECT_DIR$/../新建文件夹/TaiG/.idea/TaiG.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ZhiLiao.iml" filepath="$PROJECT_DIR$/.idea/ZhiLiao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lxi/.idea/lxi.iml" filepath="$PROJECT_DIR$/../lxi/.idea/lxi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../新建文件夹/qner/.idea/qner.iml" filepath="$PROJECT_DIR$/../新建文件夹/qner/.idea/qner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../项目/thumbs/.idea/thumbs.iml" filepath="$PROJECT_DIR$/../项目/thumbs/.idea/thumbs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../动态UA,IP,验证码处理/.idea/泰国.iml" filepath="$PROJECT_DIR$/../动态UA,IP,验证码处理/.idea/泰国.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../项目/.idea/项目.iml" filepath="$PROJECT_DIR$/../项目/.idea/项目.iml" />
+    </modules>
+  </component>
+</project>

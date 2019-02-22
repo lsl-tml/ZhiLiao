@@ -1,0 +1,690 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"><!-- TITLE -->
+    <title>国内游/出境游，旅游资讯，记录精彩瞬间。尽在-知鸟旅行</title>
+    <meta name="keywords" content="国内游/出境游，旅游资讯，记录精彩瞬间。尽在-知鸟旅行">
+    <meta name="description" content="国内游/出境游，旅游资讯，记录精彩瞬间。尽在-知鸟旅行" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="stylesheet" type="text/css" href="/static/css/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/css/lib/font-lotusicon.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/css/lib/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/css/lib/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/css/lib/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/css/lib/settings.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/css/lib/bootstrap-select.min.css">
+
+
+    <!-- 主体风格 再选 主体风格-->
+    <link rel="stylesheet" type="text/css" href="/static/css/css/style.css">
+    <style>
+        ul li{
+        list-style-type:none;
+        }
+        h4>span{
+            font-size: 14px;
+        }
+        #yj_ajax_date{
+            width: 100%;
+        }
+        #yj_ajax_date img{
+            width: 100%;
+            margin: 0.5%;
+        }
+        #yj_list>p{
+            margin: 0;
+        }
+
+    </style>
+    <script src="/static/js/jquery-1.11.3.js"></script>
+
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+
+    <![endif]-->
+</head>
+
+<!--[if IE 7]> <body class="ie7 lt-ie8 lt-ie9 lt-ie10"> <![endif]-->
+<!--[if IE 8]> <body class="ie8 lt-ie9 lt-ie10"> <![endif]-->
+<!--[if IE 9]> <body class="ie9 lt-ie10"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body>
+  <div id='guanggao_pc' href="http://www.485240.com" style="display: none;position : fixed;right:0;bottom:0;z-index: 1000;width: 11%;height: 50%;">
+      <div>
+          <a href="/city_details/?city_id=1015202">
+              <img src="/static/img/gg/{{ gg.0.img.0 }}.png" style="width: 100%;">
+              <span>{{ gg.0.jj }}</span>
+          </a>
+      </div>
+      <div>
+          <a href="/city_details/?city_id=1015101">
+              <img src="/static/img/gg/{{ gg.1.img.0 }}.png" style="width: 100%;">
+              <span>{{ gg.1.jj }}</span>
+          </a>
+      </div>
+  </div>
+  <a id='guanggao' href="http://www.485240.com" style="display: none;position : fixed;bottom:0;z-index: 1000;width: 100%;">
+      <img src="/static/img/ggao.jpg"style="width: 100%;">
+{#      <div style="width: 50%;float: left">#}
+{#          <a href="/city_details/?city_id=1015202">#}
+{#              <img src="/static/img/gg/{{ gg.0.img.0 }}.png" style="width: 50%;height: 50px;float: left">#}
+{#              <img src="/static/img/gg/{{ gg.0.img.1 }}.png" style="width: 50%;height: 50px;float: left">#}
+{#              <span style="position: absolute;color: white;transform: translate(0,-50px)">{{ gg.0.jj }}</span>#}
+{#          </a>#}
+{#      </div>#}
+{#      <div style="width: 50%;float: left">#}
+{#          <a href="/city_details/?city_id=1015101">#}
+{#              <img src="/static/img/gg/{{ gg.1.img.0 }}.png" style="width: 50%;height: 50px;float: left">#}
+{#              <img src="/static/img/gg/{{ gg.1.img.1 }}.png" style="width: 50%;height: 50px;float: left">#}
+{#              <span style="position: absolute;color: white;transform: translate(0,-50px)">{{ gg.1.jj }}</span>#}
+{#          </a>#}
+{#      </div>#}
+  </a>
+
+    <!-- 预加载 -->
+
+
+    <!-- 页面包装 -->
+    <div id="page-wrap">
+
+        <!-- 头部 -->
+        <header id="header" >
+
+            <!-- 页首顶部 -->
+            <div class="header_top " style="background-color: #232323;">
+                <div class="container" style="background: #2e2e2e;">
+                    <div class="header_right float-right">
+
+                        <span class="login-register" style="font-size: 16px;">
+                            <a href="/login/" id="login_in">登录</a>
+                            <a href="/register/" id="register_ter">注册</a>
+                            <a href="/travel_article/?status=1">发表游记</a>
+                        </span>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- 端部/顶部-->
+        {% block header_top %}
+{% endblock %}
+            <!-- 标题标志和菜单-->
+            <div class="header_content" id="header_content" style=" box-shadow: 0 1px 8px 0 rgba(0,0,0,0.58); ">
+
+                <div class="container" style="padding: 5px;">
+                    <!-- 开始标志 -->
+                    <div class="header_logo">
+                        <a href="/"><img src="/static/img/youji_img_admin/penglailg.png"></a>
+                    </div>
+                    <!-- 结束/标题标志-->
+
+                    <!-- 标题菜单 -->
+                    <nav class="header_menu" style="padding: 0;">
+                        <ul class="menu">
+                            <li><a href="/">首页</a></li>
+
+                            <li>
+                                <a href="/jd_list/">热门目的地<span class="fa fa-caret-down"></span></a>
+                                <ul class="sub-menu">
+                                    {% for i in q_jd_table_lb %}
+                                    <li><a href="/jd_list/?jd_id={{ i.id }}">{{ i.jdname }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/ms_list/">美食推荐<span class="fa fa-caret-down"></span></a>
+                                <ul class="sub-menu">
+                                    {% for i in q_ms_table_lb %}
+                                        <li><a href="/ms_xq/?ms_id={{ i.id }}">{{ i.msname }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="/yj_list/">精华游记<span class="fa fa-caret-down"></span></a>
+                                <ul class="sub-menu">
+                                    {% for i in Q_yj_table_lb %}
+                                        <li><a href="/yj_xq/?yj_id={{ i.id }}">{{ i.yj_name }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/q_city_table_fn/?type=1">国内目的地<span class="fa fa-caret-down"></span></a>
+                                <ul class="sub-menu">
+                                    <li>
+                                         <a href="/jd_list/?jd_fn=1">祈福<span class="fa fa-caret-right"></span></a>
+                                         <ul class="sub-menu">
+                                            {% for i in q_jd_table_gn_qf %}
+                                                <li><a href="/jd_list/?jd_id={{ i.id }}">{{ i.jdname }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/jd_list/?jd_fn=2">古镇<span class="fa fa-caret-right"></span></a>
+                                        <ul class="sub-menu">
+                                            {% for i in q_jd_table_gn_gz %}
+                                                <li><a href="/jd_list/?jd_id={{ i.id }}">{{ i.jdname }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/jd_list/?jd_fn=3">名山大川<span class="fa fa-caret-right"></span></a>
+                                        <ul class="sub-menu">
+                                            {% for i in q_jd_table_gn_sc %}
+                                                <li><a href="/jd_list/?jd_id={{ i.id }}">{{ i.jdname }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/jd_list/?jd_fn=4">文艺<span class="fa fa-caret-right"></span></a>
+                                        <ul class="sub-menu">
+                                            {% for i in q_jd_table_gn_wy %}
+                                                <li><a href="/jd_list/?jd_id={{ i.id }}">{{ i.jdname }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/jd_list/?jd_fn=5">美食之都<span class="fa fa-caret-right"></span></a>
+                                        <ul class="sub-menu">
+                                            {% for i in q_jd_table_gn_ms %}
+                                                <li><a href="/jd_list/?jd_id={{ i.id }}">{{ i.jdname }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/jd_list/?jd_fn=6">名校<span class="fa fa-caret-right"></span></a>
+                                        <ul class="sub-menu">
+                                            {% for i in q_jd_table_gn_mx %}
+                                                <li><a href="/jd_list/?jd_id={{ i.id }}">{{ i.jdname }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/jd_list/?jd_fn=7">古城<span class="fa fa-caret-right"></span></a>
+                                        <ul class="sub-menu">
+                                            {% for i in q_jd_table_gn_gc %}
+                                                <li><a href="/jd_list/?jd_id={{ i.id }}">{{ i.jdname }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/q_city_table_fn/?type=2">国外目的地<span class="fa fa-caret-down"></span></a>
+                                <ul class="sub-menu">
+                                    {% for i in q_jd_table_gw %}
+                                        <li><a href="/jd_list/?jd_id={{ i.id }}">{{ i.jdname }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:;">我的<span class="fa fa-caret-down"></span></a>
+                                <ul class="sub-menu">
+                                    <!--<li><a href="/static/app-debug18.apk">app下载</a></li>-->
+                                    <li><a href="/personal/">个人中心</a></li>
+                                    <li><a href="/travel_article/?status=1">发表游记</a></li>
+                                    <li id="login_li_ok"><a href="/login/">登录</a></li>
+                                    <li id="refister_li_ok"><a href="/register/">注册</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </nav>
+                    <!-- 结束/标题菜单-->
+
+                    <!-- 菜单栏 -->
+                    <span class="menu-bars">
+                        <span></span>
+                    </span>
+                    <!-- 结束/菜单栏-->
+
+                </div>
+            </div>
+            <!--结束/ 标题标志和菜单-->
+
+        </header>
+
+
+        <!-- 结束 / 头部 -->
+       {% block content %}
+
+    <section class="section-event-news bg-white">
+        <div class="container">
+            <div class="event-news" style="padding: 0">
+                <div class="row">
+                    <div class="col-md-6" style="width: 100%;">
+                        <div class="event">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12">
+                                    <div class="event-slide owl-single">
+                                        <div class="event-item">
+                                            <div class="img hover-zoom">
+                                                <a href="javascript:;">
+                                                    <img src="/static/img/index_lunbo/1.png" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="img hover-zoom">
+                                                <a href="javascript:;">
+                                                    <img src="/static/img/index_lunbo/2.png" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="img hover-zoom">
+                                                <a href="javascript:;">
+                                                    <img src="/static/img/index_lunbo/3.png" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+        <!-- 结束/横幅滑块-->
+
+
+
+        <section class="section-accomd awe-parallax bg-14">
+            <div class="container">
+                <div class="accomd-modations" style="padding-top:0; ">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="accomd-modations-header" style="margin-bottom:0; ">
+                                <h2 class="heading">景区 & 推荐</h2>
+                                <img src="/static/img/icon-accmod.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="accomd-modations-content owl-single">
+
+                                <div class="row">
+                                {% for i in q_city_table_cs_date %}
+                                    {% if forloop.counter <= 6 %}
+                                    <div class="col-xs-4">
+                                        <div class="accomd-modations-room">
+                                            <div class="img">
+                                                <a href="/city_details/?city_id={{ i.id }}">
+                                                    <img src="{{ http_dz }}/static/lunbo/{{ i.city_img }}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="text">
+                                                <h2 style="text-align: center;width: 100%;">
+                                                    <a href="/city_details/?city_id={{ i.id }}">{{ i.city_name }}</a>
+                                                </h2>
+                                                <a href="/city_details/?city_id={{ i.id }}"><p style="font-size: 14px;color: white;">{{ i.city_jj }}</p></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% else %}
+                                {% if forloop.counter == 7 %}
+                                    </div>
+
+                                    <div class="row">
+                                    {% endif %}
+
+                                    <div class="col-xs-4">
+                                        <div class="accomd-modations-room">
+                                            <div class="img">
+                                                <a href="/city_details/?city_id={{ i.id }}">
+                                                    <img src="{{ http_dz }}/static/lunbo/{{ i.city_img }}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="text">
+                                                <h2 style="text-align: center;width: 100%;">
+                                                    <a href="/city_details/?city_id={{ i.id }}">{{ i.city_name }}</a>
+                                                </h2>
+                                                <a href="/city_details/?city_id={{ i.id }}"><p style="font-size: 14px;color: white;">{{ i.city_jj }}</p></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    {% endif %}
+                                {% endfor %}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="/q_city_table_fn/" class="awe-btn awe-btn-default"style="font-size: 16px;float: right;transform:translate(-50px,-45px);">更多>>></a>
+            </div>
+
+        </section>
+
+
+
+    {% for i in q_jd_table_date %}
+        <section class="section-home-about bg-white">
+            <div class="container">
+                <div class="home-about">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="img">
+                                <a href="/jd_list/?jd_id={{ i.id }}">
+                                    <img src="{{ http_dz }}/static/jd_tp/{{ i.imgname }}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text">
+                                <h2 class="heading">{{ i.jdname }}</h2>
+                                <span class="box-border"></span>
+                                <p>{{ i.gaishu }}</p>
+                                {# <a href="/jd_xq/?jd_id={{ i.id }}" class="awe-btn awe-btn-default">更多>></a>#}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    {% endfor %}
+
+
+        <section class="section-event-news bg-white">
+            <div class="container">
+
+                <div class="event-news">
+                    <div class="row">
+
+
+                        <div class="col-md-6">
+                            <div class="event">
+                                <h2 class="heading">本期城市推荐:{{ q_city_table_cs_bq.0.city_name }}</h2>
+                                <span class="box-border w350"></span>
+
+                                <div class="row">
+
+
+                                    <div class="col-xs-12 col-sm-12">
+                                        <div class="event-slide owl-single">
+                                            {% for i in q_city_table_cs_bq.0.city_img %}
+                                            <div class="event-item">
+                                                <div class="img hover-zoom">
+                                                    <a href="/city_details/?city_id={{ q_city_table_cs_bq.0.id }}">
+                                                        <img src="{{ http_dz }}/static/lunbo/{{ i }}" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    <p style="color:white;transform: translate(0,-50px);background: rgba(1,1,1,0.5)">&nbsp;&nbsp;&nbsp;{{ q_city_table_cs_bq.0.city_jj }}</p>
+                                    </div>
+
+
+
+                                    <div class="col-xs-6">
+                                        <div class="event-item">
+                                            <div class="img hover-zoom">
+                                                <a href="/city_details/?city_id={{ q_city_table_cs_bq.1.id }}">
+                                                    <img src="{{ http_dz }}/static/lunbo/{{ q_city_table_cs_bq.1.city_img.0 }}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="text">
+                                                <div class="text-cn">
+                                                    <h2>{{ q_city_table_cs_bq.1.city_name }}</h2><br><br>
+                                                    <p style="color:white">{{ q_city_table_cs_bq.1.city_jj }}</p>
+{#                                                    <a href="/spot/" class="awe-btn awe-btn-12">更多>></a>#}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-xs-6">
+                                        <div class="event-item">
+                                            <div class="img hover-zoom">
+                                                <a href="/city_details/?city_id={{ q_city_table_cs_bq.2.id }}">
+                                                    <img src="{{ http_dz }}/static/lunbo/{{ q_city_table_cs_bq.2.city_img.0 }}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="text">
+                                                <div class="text-cn">
+                                                    <h2>{{ q_city_table_cs_bq.2.city_name }} </h2><br><br>
+                                                    <p style="color:white">{{ q_city_table_cs_bq.2.city_jj }}</p>
+{#                                                    <a href="/spot/" class="awe-btn awe-btn-12">更多>></a>#}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-6">
+                            <div class="news">
+                                <h2 class="heading">美食</h2>
+                                <span class="box-border w350 space-5"></span>
+
+                                <div class="row">
+
+                                    {% for i in q_ms_table_date %}
+                                            <div class="col-md-12">
+                                                <div class="news-item">
+                                                    <div class="img">
+                                                        <a href="/ms_xq/?ms_id={{ i.id }}">
+                                                            <img src="{{ http_dz }}/static/ms_tp/{{ i.imgname }}" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="text">
+                                                        <h2><a href="/ms_xq/?ms_id={{ i.id }}">{{ i.msname }}</a></h2>
+                                                        <span class="date" style="font-size: 14px">{{ i.miaoshu }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    {% endfor %}
+
+                                </div>
+                                <a href="/ms_list/" class="awe-btn awe-btn-default"style="font-size: 16px;float: right">更多>>></a>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="hr"></div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <section class="section-accomd awe-parallax bg-14">
+            <div class="container">
+                <div class="accomd-modations" style="padding: 40px 0px 60px 0px;">
+                    <div class="row">
+                        <div class="col-md-12"style="margin-bottom: 20px ;">
+                            <div class="accomd-modations-header">
+                                <h2 class="heading">游记 & 推荐</h2>
+                                <img src="/static/img/icon-accmod.png" alt="icon">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="accomd-modations-content owl-single">
+
+                                <div class="row">
+                                {% for i in q_yj_table_date %}
+                                    <div class="col-xs-4">
+                                        <div class="accomd-modations-room">
+                                            <div class="img">
+                                        {% if i.state.0 == 'yj_data' %}
+                                                <a href="/yj_xq/?yj_id={{ i.id }}">
+                                                    <img src="{{ http_dz }}/static/{{ i.state.1 }}/{{ i.img }}" alt=""style="height: 250px">
+                                                </a>
+                                            </div>
+                                            <div class="text">
+                                                <h2 style="text-align: center;width: 100%;"><a href="/yj_xq/?yj_id={{ i.id }}">{{ i.yj_name }}</a></h2>
+                                        {% else %}
+                                                 <a href="/particulars/?travel_id={{ i.id }}">
+                                                    <img src="/static/{{ i.state.1 }}/{{ i.title_img }}" alt=""style="height: 250px">
+                                                </a>
+                                            </div>
+                                            <div class="text">
+                                                <h2 style="text-align: center;width: 100%;"><a href="/particulars/?travel_id={{ i.id }}">{{ i.title }}</a></h2>
+                                        {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="/yj_list/" class="awe-btn awe-btn-default"style="font-size: 16px;float: right;transform:translate(-50px,-50px);height: 40px;">更多>>></a>
+            </div>
+
+        </section>
+       {% endblock %}
+{#         <footer id="footer">#}
+{#            <div class="footer_bottom" style="margin-bottom: 20%;padding: 0;">#}
+{##}
+{#            </div>#}
+{#        </footer>#}
+    <footer id="footer" style="margin-bottom:20% ">
+<div class="footer_bottom">
+                <div class="container">
+                    <p>--若有问题请联系客服--<br>
+                        QQ:604311174
+                    </p>
+                </div>
+            </div>
+
+
+        </footer>
+</div>
+
+
+
+
+
+
+
+    <script>
+        $(function(){
+            var sUserAgent = window.navigator.userAgent.toLowerCase();
+            var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+            var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+            var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+            var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+            var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+            var bIsAndroid = sUserAgent.match(/android/i) == "android";
+            var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+            var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+            if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+                // window.location.href = "WapUI/Main.html";
+                $('#guanggao').css('display','block');
+
+            }
+            else {
+                // window.location.href = "WebUI/Main.html";
+                    $('#guanggao_pc').css('display','block');
+                    $('#footer').css('margin','50px 0 0');
+                    $('form').css('margin-top','85px');
+                    $('.Personal_travel ').css('margin-top','85px');
+
+            };
+
+
+            function Check_login(){
+                $.get('/check_login/',function (data) {
+                    if(data.loginStatus==1){
+                        if(data.zt=='0') {
+                            alert("恭喜您注册成功✌！");
+                        };
+                        $.get('/check_login_zt/',function (data) {},'json');
+                        $("#login_in").html('欢迎：'+data.name);
+                        $("#login_in").attr('href','/personal/');
+                        $("#register_ter").html('注销');
+                        $("#register_ter").attr('href','/logout/');
+                        $("#refister_li_ok").children().remove();
+                        $("#login_li_ok>a").attr('href','/update_password/');
+                        $("#login_li_ok>a").html('修改密码');
+                    }else{
+                        $("#login_in").html('登录');
+                        $("#login_in").attr('href','/login/');
+                        $("#register_ter").html('注册');
+                        $("#register_ter").attr('href','/register/');
+                    };
+                },'json');
+            };
+
+
+            Check_login();
+            {#$('a').each(function () {#}
+            {#    $(this).attr('target',"_blank")#}
+            {# });#}
+            $('.page-navigation>li>a').each(function () {
+                $(this).attr('target',"")
+            });
+            $('head').append('<link rel="shortcut icon"  type="image/x-icon" href="/static/img/youji_img_admin/prnglailg_a.ico">');
+
+        })
+    </script>
+    {% block script %}
+    <script>
+        $(function () {
+            var TIme_top = setTimeout(function () {
+                $('#page-wrap>#header').css('top','0px');
+            },50);
+
+        })
+    </script>
+    {% endblock %}
+
+
+
+
+    <script type="text/javascript" src="/static/js/lib/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/bootstrap-select.js"></script>
+    <script src="http://ditu.google.cn/maps/api/js?v=3.exp&amp;signed_in=true"></script>
+    <script type="text/javascript" src="/static/js/lib/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/owl.carousel.js"></script>
+    <script type="text/javascript" src="/static/js/lib/jquery.appear.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/jquery.countTo.js"></script>
+    <script type="text/javascript" src="/static/js/lib/jquery.countdown.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/jquery.parallax-1.1.3.js"></script>
+    <script type="text/javascript" src="/static/js/lib/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/SmoothScroll.js"></script>
+
+    <script type="text/javascript" src="/static/js/lib/jquery.form.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/jquery.validate.min.js"></script>
+
+    <script type="text/javascript" src="/static/js/scripts.js"></script>
+    <script type="text/javascript" src="//js.users.51.la/19879233.js"></script>
+</body>
+</html>
+

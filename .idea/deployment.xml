@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData">
+    <serverData>
+      <paths name="fwq">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/ces" local="$PROJECT_DIR$/../lxi/lxi/spiders" web="/index" />
+            <mapping deploy="/ces" local="$PROJECT_DIR$/../项目/thumbs" web="/inmrs" />
+            <mapping deploy="/ces" local="$PROJECT_DIR$/../项目" web="/mmm" />
+            <mapping deploy="/ces" local="$PROJECT_DIR$/../动态UA,IP,验证码处理" web="/k" />
+            <mapping deploy="/ces" local="$PROJECT_DIR$" web="/d" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
